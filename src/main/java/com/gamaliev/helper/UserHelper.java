@@ -62,13 +62,12 @@ public class UserHelper {
                 userList = userService.getSelected(startPosition, endPosition, textFilter);
             }
 
-            int paginationEnd = numberOfPage + 3 > totalPages
-                    ? totalPages
-                    : numberOfPage > 2
-                        ? numberOfPage + 2
-                        : numberOfPage == 1
-                            ? numberOfPage + 4
-                            : numberOfPage + 3;
+            // TODO: make choice size of pagination, && to first, to last page;
+            int paginationEnd = totalPages >= 5 && numberOfPage >= 1 && numberOfPage <= 3 ? 5 :
+                    totalPages >= 5 && numberOfPage >= totalPages - 2 && numberOfPage <= totalPages ? totalPages :
+                            totalPages >= 5 ? numberOfPage + 2 :
+                                    totalPages;
+
             int paginationStart = paginationEnd - 4 >= 1 ? paginationEnd - 4 : 1;
             int pageToView = totalPages > 5 ? 5 : totalPages;
 

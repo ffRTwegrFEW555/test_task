@@ -18,7 +18,7 @@
     </bean>
 
     <!-- Settings file -->
-    <context:property-placeholder location="classpath:app.properties"/>
+    <context:property-placeholder location="WEB-INF/app.properties"/>
 
     <!-- DB settings -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">

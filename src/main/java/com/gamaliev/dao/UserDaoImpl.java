@@ -84,7 +84,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public int getCount() {
         Session session = this.sessionFactory.getCurrentSession();
-        return ((BigInteger) session.createNativeQuery("SELECT COUNT(*) FROM user;")
+        return ((BigInteger) session.createNativeQuery("SELECT COUNT(*) FROM User;")
                 .list()
                 .get(0))
                 .intValue();

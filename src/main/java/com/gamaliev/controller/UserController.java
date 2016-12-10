@@ -13,7 +13,7 @@ import com.gamaliev.service.UserService;
 
 
 @Controller
-@RequestMapping(value = "/users")
+@RequestMapping(value = "users")
 public class UserController {
 
     private UserService userService;
@@ -56,7 +56,7 @@ public class UserController {
     }
 
     // Remove user by id
-    @RequestMapping(value = "/remove",
+    @RequestMapping(value = "remove",
                     method = RequestMethod.POST,
                     produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
@@ -72,7 +72,7 @@ public class UserController {
     }
 
     // Add user
-    @RequestMapping(value = "/add",
+    @RequestMapping(value = "add",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
@@ -92,7 +92,7 @@ public class UserController {
     }
 
     // Get user by id
-    @RequestMapping(value = "/get",
+    @RequestMapping(value = "get",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody
@@ -114,7 +114,7 @@ public class UserController {
     }
 
     // Update user
-    @RequestMapping(value = "/update",
+    @RequestMapping(value = "update",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseBody

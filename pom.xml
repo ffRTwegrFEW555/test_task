@@ -73,11 +73,6 @@
         <outputDirectory>target</outputDirectory>
         <finalName>TestTask</finalName>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
-        <resources>
-            <resource>
-                <directory>${basedir}/src/main/resources</directory>
-            </resource>
-        </resources>
 
         <pluginManagement>
             <plugins>
@@ -100,6 +95,12 @@
                 <plugin>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>3.0.0</version>
+                    <configuration>
+                        <packagingExcludes>
+                            **/${project.artifactId}/**,
+                            WEB-INF/classes/*.*
+                        </packagingExcludes>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>

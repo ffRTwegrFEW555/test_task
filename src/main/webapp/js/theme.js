@@ -181,7 +181,7 @@ app.controller("userTable", ['$scope', '$http', function ($scope, $http) {
     $scope.httpPostScopeRemove = function (id) {
         $http({
             method: 'POST',
-            url: '/users/remove',
+            url: 'users/remove',
             params: {'id': id}
         }).then(function successCallback(response) {
             showAlert(  '\<span\>\<strong\>Success!\<\/strong\> User successfully removed (id=' + id + ')\<\/span\>',
@@ -196,7 +196,7 @@ app.controller("userTable", ['$scope', '$http', function ($scope, $http) {
     $scope.httpPostScopeAdd = function (user) {
         $http({
             method: 'POST',
-            url: '/users/add',
+            url: 'users/add',
             data: user
         }).then(function successCallback(response) {
             if (response.data['id'] == null || response.data['id'] == 0) {
@@ -221,7 +221,7 @@ app.controller("userTable", ['$scope', '$http', function ($scope, $http) {
     $scope.httpPostScopeGet = function (modal, id) {
         $http({
             method: 'POST',
-            url: '/users/get',
+            url: 'users/get',
             params: {'id': id}
         }).then(function successCallback(response) {
             if (response.data['id'] == null || response.data['id'] == 0) {
@@ -248,7 +248,7 @@ app.controller("userTable", ['$scope', '$http', function ($scope, $http) {
     $scope.httpPostScopeUpdate = function (user) {
         $http({
             method: 'POST',
-            url: '/users/update',
+            url: 'users/update',
             data: user
         }).then(function successCallback(response) {
             if (response.data['id'] == null || response.data['id'] == 0) {
@@ -288,7 +288,7 @@ app.controller("userTable", ['$scope', '$http', function ($scope, $http) {
 
         $http({
             method: 'POST',
-            url: '/users',
+            url: 'users',
             params: {
                 'itemsPerPage'  : angular.element('#itemsPerPageButton').val(),
                 'numberOfPage'  : $scope.numberOfPage,

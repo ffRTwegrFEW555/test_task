@@ -70,8 +70,8 @@
     </dependencies>
 
     <build>
-        <outputDirectory>target</outputDirectory>
         <finalName>TestTask</finalName>
+        <defaultGoal>package</defaultGoal>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
 
         <pluginManagement>
@@ -95,11 +95,6 @@
                 <plugin>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>3.0.0</version>
-                    <configuration>
-                        <packagingExcludes>
-                            **/${project.artifactId}/**
-                        </packagingExcludes>
-                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
